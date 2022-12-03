@@ -1,0 +1,1 @@
+puts File.readlines('input').each_slice(3).map {|slice| (('a'..'z').to_a + ('A'..'Z').to_a).index(slice.map {|str| str.chars.uniq}.join.delete!("\n").chars.group_by { |char| char }.select { |key, value| value.size > 2 }.first[0]) + 1}.sum
